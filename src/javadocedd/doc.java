@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Manuel
+ * @author Manuel Hervás
  */
 public class doc {
 
@@ -16,9 +16,9 @@ public class doc {
 
 	 System.out.println ("bienvenido, ven a la computadora perenne");
 
-	 String exit = ""; // = nulo; informará una excepción de puntero nulo
+	 String exit = ""; // = variable vacía; informará una excepción de puntero nulo
 	while(!exit.equals("exit")) {
-		// ctrl + alt + o
+		
 		Scanner scanner = new Scanner(System.in);
 		 System.out.println ("Introduzca su primer número:");
 		 // El método scanner.nextDouble bloqueará el programa aquí
@@ -45,23 +45,26 @@ public class doc {
 			case "*":
 				 System.out.println ("El resultado es:" + (firstNum * secondNum));
 				break;
+                                
+                                //metodo para multiplicar
+                                
 			case "/":
 				 System.out.println ("El resultado es:" + (firstNum / secondNum));
 				break;
+                                
+                                //metodo de división
 			default:
 				 System.out.println ("¡Hombre, no hagas problemas! ¡Por favor, pórtate bien!");
 				 break; // Se puede omitir el break en default
 		}
 		
 		 System.out.println ("¿Desea continuar con el cálculo? Si desea salir, ingrese exit, si continúa, ingrese cualquier carácter!");
-		exit = scanner.next();
+		exit = scanner.next(); 
+                //salida 
 		if(exit.equals("exit")) {
 			 System.out.println ("¡Bienvenido a usar la próxima vez!");
 		}
-		
 	
-	
-
 }
 
 }
