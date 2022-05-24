@@ -39,16 +39,15 @@ public class doc {
 
         serieAleatoria = new ArrayList<Integer> ();
 
-        for (int i=0; i<numeroItems; i++) {  serieAleatoria.add(0);  }
+        for (int i=0; i<numeroItems; i++) { 
+            
+            serieAleatoria.add(0);  
+        
+        }
 
         System.out.println ("Serie inicializada. El número de elementos en la serie es: " + getNumeroItems() );
 
     } //Cierre del constructor
-
-    doc() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     /**
 
      * Método que devuelve el número de ítems (números aleatorios) existentes en la serie
@@ -57,7 +56,11 @@ public class doc {
 
      */
 
-    public int getNumeroItems() { return serieAleatoria.size(); }
+    public int getNumeroItems() {
+        
+        return serieAleatoria.size();
+    
+    }
 
     /**
 
@@ -71,7 +74,9 @@ public class doc {
 
         numAleatorio = new Random ();
 
-        for (int i=0; i < serieAleatoria.size(); i++) { serieAleatoria.set(i, numAleatorio.nextInt(1000) ); }
+        for (int i=0; i < serieAleatoria.size(); i++) {
+            
+            serieAleatoria.set(i, numAleatorio.nextInt(1000) ); }
 
         System.out.print ("Serie generada! ");
 
