@@ -9,66 +9,75 @@ import java.util.Scanner;
  *
  * @author Manuel Hervás
  */
-public class doc {
+import java.util.ArrayList;
 
-    public doc() {
-        String name; // El valor inicial se puede omitir aquí, el nombre predeterminado es nulo
+import java.util.Random;
 
-	 System.out.println ("bienvenido, ven a la computadora perenne");
+ 
 
-	 String exit = ""; // = variable vacía; informará una excepción de puntero nulo
-	while(!exit.equals("exit")) {
-		
-		Scanner scanner = new Scanner(System.in);
-		 System.out.println ("Introduzca su primer número:");
-		 // El método scanner.nextDouble bloqueará el programa aquí
-		double firstNum = scanner.nextDouble();
+/**
 
-		 System.out.println ("Introduzca su segundo número:");
-		double secondNum = scanner.nextDouble();
+ * Esta clase define objetos que contienen tantos enteros aleatorios entre 0 y 1000 como se le definen al crear un objeto
 
-		 System.out.println ("Introduzca la operación que desea realizar: + - * /");
-		 String caoZuo = scanner.next (); // siguiente es string
-		
-		 // romper; Saltar de todo el bloque de código, el bloque de código ha terminado
-		switch (caoZuo) {
+**/
 
-			case "+":
-				 System.out.println ("El resultado es:" + (firstNum + secondNum));
-				break;
-			case "-":
-				 System.out.println ("El resultado es:" + (firstNum-secondNum));
-				break;
-                                
-                                //hasta aquí tenemos los 2 metodos para realizar las sumas
-                                
-			case "*":
-				 System.out.println ("El resultado es:" + (firstNum * secondNum));
-				break;
-                                
-                                //metodo para multiplicar
-                                
-			case "/":
-				 System.out.println ("El resultado es:" + (firstNum / secondNum));
-				break;
-                                
-                                //metodo de división
-			default:
-				 System.out.println ("¡Hombre, no hagas problemas! ¡Por favor, pórtate bien!");
-				 break; // Se puede omitir el break en default
-		}
-		
-		 System.out.println ("¿Desea continuar con el cálculo? Si desea salir, ingrese exit, si continúa, ingrese cualquier carácter!");
-		exit = scanner.next(); 
-                //salida 
-		if(exit.equals("exit")) {
-			 System.out.println ("¡Bienvenido a usar la próxima vez!");
-		}
-	
-}
+public class doc { 
 
-}
+    //Campos de la clase
+
+    private ArrayList<Integer> serieAleatoria;
+
+    /**
+
+     * Constructor para la serie de números aleatorios
+
+     * @param numeroItems El parámetro numeroItems define el número de elementos que va a tener la serie aleatoria
+
+     */
+
+    public doc (int numeroItems) {
+
+        serieAleatoria = new ArrayList<Integer> ();
+
+        for (int i=0; i<numeroItems; i++) {  serieAleatoria.add(0);  }
+
+        System.out.println ("Serie inicializada. El número de elementos en la serie es: " + getNumeroItems() );
+
+    } //Cierre del constructor
+
+    doc() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    /**
+
+     * Método que devuelve el número de ítems (números aleatorios) existentes en la serie
+
+     * @return El número de ítems (números aleatorios) de que consta la serie
+
+     */
+
+    public int getNumeroItems() { return serieAleatoria.size(); }
+
+    /**
+
+     * Método que genera la serie de números aleatorios
+
+     */
+
+    public void generarSerieDeAleatorios () {
+
+        Random numAleatorio;
+
+        numAleatorio = new Random ();
+
+        for (int i=0; i < serieAleatoria.size(); i++) { serieAleatoria.set(i, numAleatorio.nextInt(1000) ); }
+
+        System.out.print ("Serie generada! ");
+
+    } //Cierre del método
+
+} //Cierre de la clase
     
     
 
